@@ -571,10 +571,15 @@ function bugFix()//sometimes noti popups don't appear so we check it and make th
     
         $('.noti-any , .noti-blanket').hide();
         $('.noti-any').empty();
-        ref = window.open('http://'+glogOrViveg+'/index.php?controller=order', '_blank', 'location=no,toolbar=no');
+        ref = window.open('http://'+glogOrViveg+'/index.php?glog-app-access=76ef0d45220fdee3ac883a0c7565e50c', '_blank', 'location=no,toolbar=no');
         eventListeners();
         
 
+    });
+
+    $('body').on('click', '.viewCatalogue', function()
+    {
+        
     });
 
     $('.changeLocation').on('click', function()
