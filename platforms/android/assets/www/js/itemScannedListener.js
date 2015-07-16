@@ -16,29 +16,15 @@ $(document).on('itemScanned',function(event,scanResult)
               scanResultWhenOffline = scanResult;//because when the single page is already open. and it goes offline.. and this line isn't here.. It loads the last "scanResultwhenoffline" instead of the last scanned item which was already open in the single page.
 			  renderOnlineSinglePage(scanResult);
              
+               
+            
+            
               //ref = window.open('http://'+glogOrViveg+'/redirect.php?barcode='+scanResult, '_blank', 'location=no,toolbar=no');
               //eventListeners();
               //askExit();//because it was set to loading before scanner start scanning
             
                 
-          /*  navigator.notification.beep(2);
 
-            alert('normal alert');
-			 navigator.notification.prompt(
-                'notification prompt',  // message
-                onPrompt,                  // callback to invoke
-                'Registration',            // title
-                ['Ok','Exit'],             // buttonLabels
-                'Jane Doe'                 // defaultText
-                );
-                
-				
-			navigator.notification.confirm(
-				' notifcation confirm', // message
-				 onConfirm,            // callback to invoke with index of button pressed
-				'Game Over',           // title
-				['Restart','Exit']     // buttonLabels
-			);*/
             
 		}
 

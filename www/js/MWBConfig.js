@@ -111,16 +111,20 @@ MWBSInitSpace.callback = function(result){
 
 	
     
+
     if (result.type == 'Cancel')
 	{
+        
         //Perform some action on scanning canceled if needed
         //$('.webdefault').click();
-		openHomePage();
-        askExit();//because it was set to loading before scanner start scanning
+        setTimeout(function()
+        {
+            openHomePage();
+            askExit();//because it was set to loading before scanner start scanning
+        },500);
 
     } 
-    else
-        if (result && result.code){
+    else if (result && result.code){
             //navigator.notification.alert(result.code, function(){}, result.type, 'Close');
 			scanResult = result.code;
          // alert(scanResult);

@@ -571,7 +571,7 @@ function bugFix()//sometimes noti popups don't appear so we check it and make th
     
         $('.noti-any , .noti-blanket').hide();
         $('.noti-any').empty();
-        ref = window.open('http://'+glogOrViveg+'/index.php?glog-app-access=76ef0d45220fdee3ac883a0c7565e50c', '_blank', 'location=no,toolbar=no');
+        ref = window.open('http://'+glogOrViveg+'/index.php?controller=order', '_blank', 'location=no,toolbar=no');
         eventListeners();
         
 
@@ -579,7 +579,10 @@ function bugFix()//sometimes noti popups don't appear so we check it and make th
 
     $('body').on('click', '.viewCatalogue', function()
     {
-        
+        $('.noti-any , .noti-blanket').hide();
+        $('.noti-any').empty();
+        ref = window.open('http://'+glogOrViveg+'/index.php?glog-app-access=76ef0d45220fdee3ac883a0c7565e50c', '_blank', 'location=no,toolbar=no');
+		eventListeners();
     });
 
     $('.changeLocation').on('click', function()
@@ -653,14 +656,14 @@ function askExit()
 function openHomePage()
 {
     
-                    ref = window.open('http://'+glogOrViveg+'/index.php?glog-app-access=76ef0d45220fdee3ac883a0c7565e50c', '_blank', 'location=no,toolbar=no');
+                    ref = window.open('http://'+glogOrViveg+'/index.php?id_cms=6&controller=cms', '_blank', 'location=no,toolbar=no');
                     eventListeners();
 
 }
 
 function eventListeners()
 {
-                     scanResultWhenOffline = null;//Set to null so if you goffline and go back online, it will not reload the last scanned item.
+
                      ref.addEventListener('loadstart', 
                      function(event)
                      { 
@@ -670,7 +673,6 @@ function eventListeners()
                          if(getUrlVars(event.url)['valll'] == 'close')
                          {
                              //alert(getUrlVars(event.url)['valll']);
-                             askExit();
                              ref.close();
                          }
                          else if(getUrlVars(event.url)['valll'] == 'scan')
@@ -683,6 +685,19 @@ function eventListeners()
                                  scanner.startScanning(MWBSInitSpace.init,MWBSInitSpace.callback);
                                 },500);
                          }
+						 else if(getUrlVars(event.url)['valll'] == 'catalogue')
+						 {
+            
+                             ref.close();
+                             $('.content-cont').html('<img src="img/loading.gif" style="margin:15% auto; width:25%; display:block;"/>'); 
+                              setTimeout(function()
+                             {
+							 ref = window.open('http://'+glogOrViveg+'/index.php?glog-app-access=76ef0d45220fdee3ac883a0c7565e50c', '_blank', 'location=no,toolbar=no');
+							 eventListeners();
+                              askExit();
+                             },500);
+                             //alert('test');
+						 }
                          else
                          {
                          		if(navigator.userAgent.match(/(iPod|iPhone|iPad)/) == null)
@@ -690,12 +705,7 @@ function eventListeners()
                                     
 	                                navigator.notification.activityStart("", "Please Wait....");
                              	}
-                                /* custom loading...
-                                setTimeout(function()
-                                {       ref.insertCSS({  file: "http://viveg.net/inappbrowserfiles/startcustom.css" },function(){});
-                                 		ref.executeScript({	code: "if(($('.loadinggif').length <= 0) && ($('#customheader').length <= 0)){$('body').append('<div class=\"loadinggif-cont\"><img src=\"http://viveg.net/inappbrowserfiles/loading.gif\" class=\"loadinggif\"></div>');}"}, function(values){   });
-                                 
-                                },1000);*/
+                               
                          }
                          
                      });
@@ -703,11 +713,11 @@ function eventListeners()
 					{
 						 
 
-						ref.insertCSS({  file: "http://viveg.net/inappbrowserfiles/custom.css" },function(){ /*alert('css inserted');*/});
+						ref.insertCSS({  file: "http://viveg.net/inappbrowserfiles/custom3.css" },function(){ /*alert('css inserted');*/});
 
-						ref.executeScript({	file: "http://viveg.net/inappbrowserfiles/custom2.js"}, function(values){ /*alert(event.url);*/
+						ref.executeScript({	file: "http://viveg.net/inappbrowserfiles/custom3.js"}, function(values){ /*alert(event.url);*/
                         
-                         //hide custom loading //ref.executeScript({code:" $('.loadinggif-cont').remove();	$('.loadinggif').remove(); "},function(values){});
+                        
                         
                         });
                         
