@@ -12,7 +12,7 @@
 			 $('body').bind('touchmove', function(e){e.preventDefault()});
 			 $('.bxslider').bxSlider();
 
-			 
+                
 			 
 				 $(".slideToUnlock").on('click',function()
 				 {      clearInterval(timerId);

@@ -97,13 +97,72 @@
         }
         
 		$('.noti-blanket, .noti-offline, .splashscreencont').hide();
-		$('.splashscreencont').show();
-		$('.splashloading').hide();
-		$('.slideToUnlock').show();
+		//$('.splashscreencont').show();
+		//$('.splashloading').hide();
+		//$('.slideToUnlock').show();
+        
+        $('.noti-any , .noti-blanket').show();
+        $('.noti-any').empty();
+        $('.noti-any').append('<button class="btn btn-large btn-success url url-g-log" data-url="g-log.co">g-log.co</button><button class="btn btn-large btn-primary url url-viveg" data-url="viveg.net">viveg.net</button><button class="btn btn-large btn-success url url-coverview01" data-url="coverview01.com">coverview01.com</button><button class="btn btn-large btn-primary url url-coverview02" data-url="coverview02.com">coverview02.com</button><button class="btn btn-large btn-success url url-coverview03" data-url="coverview03.com">coverview03.com</button><button class="btn btn-large btn-primary url url-coverview04" data-url="coverview04.com">coverview04.com</button><button class="btn btn-large btn-success url url-coverview05" data-url="coverview05.com">coverview05.com</button><button class="btn btn-large btn-primary url url-coverview06" data-url="coverview06.com">coverview06.com</button><button class="btn btn-large btn-success url url-coverview07" data-url="coverview07.com">coverview07.com</button><button class="btn btn-large btn-primary url url-coverview08" data-url="coverview08.com">coverview08.com</button><button class="btn btn-large btn-success url url-coverview09" data-url="coverview09.com">coverview09.com</button><button class="btn btn-large btn-primary url url-coverview10" data-url="coverview10.com">coverview10.com</button><button class="btn btn-large btn-danger enterurl">other</button>');
+        
         
 
         
 	}
+
+$('body').on('click','.url',function()
+{
+    
+    glogOrViveg = $(this).data('url');
+   
+    $('.noti-any , .noti-blanket').hide();
+    $('.noti-any').empty();
+    
+    $('.splashscreencont').show();
+	$('.splashloading').hide();
+	$('.slideToUnlock').show();
+});
+
+$('body').on('click', '.enterurl', function()
+{
+    $('.url').hide();
+    $(this).hide();
+
+    $('.noti-any').append('<input type="text" class="entered-url" placeholder="example.com" value=""/><button class="btn btn-large btn-danger submiturl">Submit</button>');
+
+
+    
+});
+
+
+$('body').on('click','.submiturl', function()
+{
+     if( $('.entered-url').val().length === 0 )
+     {
+          $('.noti-any').empty();
+         $('.url , .enterurl').show();
+     }
+     else
+     {
+       
+     
+
+            glogOrViveg = $('.entered-url').val();
+         
+            $('.noti-any , .noti-blanket').hide();
+            $('.noti-any').empty();
+         
+
+            $('.splashscreencont').show();
+            $('.splashloading').hide();
+            $('.slideToUnlock').show();
+     }
+});
+
+$('body').on('click','.enterurl',function()
+{
+    
+});
 
 function Exit()
 {

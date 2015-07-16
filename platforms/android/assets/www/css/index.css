@@ -411,7 +411,7 @@ body
 }
 
 
-.viewItem , .addToList,.addToCart , .saveChanges , .removeFromCart , .SearchBtn , .addToPrestaCart ,.yesExit, .noContinue , .g-log , .viveg ,.ScanAgain , .proceedToCheckOut
+.viewItem , .addToList,.addToCart , .saveChanges , .removeFromCart , .SearchBtn , .addToPrestaCart ,.yesExit, .noContinue , .g-log , .viveg ,.ScanAgain , .proceedToCheckOut , .url , .enterurl , .submiturl
 {
     width:100%;
     min-height:50px;
@@ -880,7 +880,7 @@ video#bgvid{
     }
 
     
-    .viewItem , .addToList,.addToCart , .saveChanges , .removeFromCart , .SearchBtn , .addToPrestaCart ,.yesExit, .noContinue , .g-log , .viveg ,.ScanAgain , .proceedToCheckOut
+.viewItem , .addToList,.addToCart , .saveChanges , .removeFromCart , .SearchBtn , .addToPrestaCart ,.yesExit, .noContinue , .g-log , .viveg ,.ScanAgain , .proceedToCheckOut , .url , .enterurl , .submiturl
     {
         width:100%;
         font-weight:bold;
