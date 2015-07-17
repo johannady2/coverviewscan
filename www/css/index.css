@@ -428,6 +428,12 @@ body
     background-color:darkgrey!important;
 }
 
+.entered-url
+{
+    width:100%;
+    margin-bottom:20px;
+}
+
 .orderAll 
 {
     width:60%;

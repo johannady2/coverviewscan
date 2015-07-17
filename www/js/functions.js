@@ -25,7 +25,7 @@
     }, 3000);
 
 
-
+    var urls = '<button class="btn btn-large btn-success url url-g-log" data-url="g-log.co">g-log.co</button><button class="btn btn-large btn-primary url url-viveg" data-url="viveg.net">viveg.net</button><button class="btn btn-large btn-success url url-coverview01" data-url="coverview01.com">coverview01.com</button><button class="btn btn-large btn-primary url url-coverview02" data-url="coverview02.com">coverview02.com</button><button class="btn btn-large btn-success url url-coverview03" data-url="coverview03.com">coverview03.com</button><button class="btn btn-large btn-primary url url-coverview04" data-url="coverview04.com">coverview04.com</button><button class="btn btn-large btn-success url url-coverview05" data-url="coverview05.com">coverview05.com</button><button class="btn btn-large btn-primary url url-coverview06" data-url="coverview06.com">coverview06.com</button><button class="btn btn-large btn-success url url-coverview07" data-url="coverview07.com">coverview07.com</button><button class="btn btn-large btn-primary url url-coverview08" data-url="coverview08.com">coverview08.com</button><button class="btn btn-large btn-success url url-coverview09" data-url="coverview09.com">coverview09.com</button><button class="btn btn-large btn-primary url url-coverview10" data-url="coverview10.com">coverview10.com</button><button class="btn btn-large btn-danger enterurl">other</button>';
    
 
 
@@ -103,7 +103,7 @@
         
         $('.noti-any , .noti-blanket').show();
         $('.noti-any').empty();
-        $('.noti-any').append('<button class="btn btn-large btn-success url url-g-log" data-url="g-log.co">g-log.co</button><button class="btn btn-large btn-primary url url-viveg" data-url="viveg.net">viveg.net</button><button class="btn btn-large btn-success url url-coverview01" data-url="coverview01.com">coverview01.com</button><button class="btn btn-large btn-primary url url-coverview02" data-url="coverview02.com">coverview02.com</button><button class="btn btn-large btn-success url url-coverview03" data-url="coverview03.com">coverview03.com</button><button class="btn btn-large btn-primary url url-coverview04" data-url="coverview04.com">coverview04.com</button><button class="btn btn-large btn-success url url-coverview05" data-url="coverview05.com">coverview05.com</button><button class="btn btn-large btn-primary url url-coverview06" data-url="coverview06.com">coverview06.com</button><button class="btn btn-large btn-success url url-coverview07" data-url="coverview07.com">coverview07.com</button><button class="btn btn-large btn-primary url url-coverview08" data-url="coverview08.com">coverview08.com</button><button class="btn btn-large btn-success url url-coverview09" data-url="coverview09.com">coverview09.com</button><button class="btn btn-large btn-primary url url-coverview10" data-url="coverview10.com">coverview10.com</button><button class="btn btn-large btn-danger enterurl">other</button>');
+        $('.noti-any').append(urls);
         
         
 
@@ -140,7 +140,7 @@ $('body').on('click','.submiturl', function()
      if( $('.entered-url').val().length === 0 )
      {
           $('.noti-any').empty();
-         $('.url , .enterurl').show();
+            $('.noti-any').append(urls);
      }
      else
      {
