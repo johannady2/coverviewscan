@@ -66,7 +66,8 @@
 	function onDeviceOffline()
 	{
 
-
+        $('.noti-any , .noti-blanket').hide();
+        $('.noti-any').empty();
 		$('.splashscreencont').hide();
 		$('.noti-blanket , .noti-offline').show();
 
@@ -128,26 +129,32 @@ $('body').on('click', '.enterurl', function()
     $('.url').hide();
     $(this).hide();
 
-    $('.noti-any').append('<input type="text" class="entered-url" placeholder="example.com" value=""/><button class="btn btn-large btn-danger submiturl">Submit</button>');
+    $('.noti-any').append('<a href="#" class="backToUrlList">back</a><input type="text" class="entered-url" placeholder="example.com" value=""/><button class="btn btn-large btn-danger submiturl">Submit</button>');
 
 
     
 });
 
+function showUrlList()
+{
+      $('.noti-any').empty();
+            $('.noti-any').append(urls);     
+}
+
+$('body').on('click','.backToUrlList',function()
+{
+    showUrlList();
+});
 
 $('body').on('click','.submiturl', function()
 {
      if( $('.entered-url').val().length === 0 )
      {
-          $('.noti-any').empty();
-            $('.noti-any').append(urls);
+          showUrlList();
      }
      else
      {
-       
-     
-
-            glogOrViveg = $('.entered-url').val();
+          glogOrViveg = $('.entered-url').val();
          
             $('.noti-any , .noti-blanket').hide();
             $('.noti-any').empty();
@@ -155,7 +162,8 @@ $('body').on('click','.submiturl', function()
 
             $('.splashscreencont').show();
             $('.splashloading').hide();
-            $('.slideToUnlock').show();
+            $('.slideToUnlock').show();  
+
      }
 });
 
